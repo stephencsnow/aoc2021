@@ -1,5 +1,5 @@
 from typing import List, Tuple
-from .bingo import BingoBoard, parse_input, part1, part2
+from .bingo import BingoBoard, TwoDArray, parse_input, part1, part2
 
 
 def fixture() -> Tuple[List[int], List[BingoBoard]]:
