@@ -11,10 +11,8 @@ def parse_data(text: str) -> list[Timer]:
     return [int(timer) for timer in text.split(",")]
 
 
-def part1(timers: list[Timer]) -> int:
+def cycle(timers: list[Timer], steps: int) -> int:
     counter = Counter(timers)
-
-    steps = 80
 
     for step in range(steps):
         new_counter = Counter()
@@ -35,7 +33,8 @@ def part1(timers: list[Timer]) -> int:
 def main():
     with open("input.txt") as f:
         timers = parse_data(f.read())
-    print(part1(timers))
+    print("Part 1", cycle(timers, 80))
+    print("Part 2", cycle(timers, 256))
 
 
 if __name__ == "__main__":
