@@ -1,4 +1,4 @@
-from .vents import part1, parse_input, Point, filter_only_vertical_horizontal
+from .vents import part1, parse_input, Point, filter_only_vertical_horizontal, part2
 
 
 def fixture() -> list[tuple[Point, Point]]:
@@ -23,10 +23,15 @@ def test_filter_only_vertical_horizontal():
     ]
     assert filter_only_vertical_horizontal(data) == [
         (Point(1, 2), Point(1, 4)),
-        (Point(2, 1), Point(4, 1))
+        (Point(2, 1), Point(4, 1)),
     ]
 
 
 def test_part1():
     points = fixture()
     assert part1(points) == 5
+
+
+def test_part2():
+    points = fixture()
+    assert part2(points) == 12
