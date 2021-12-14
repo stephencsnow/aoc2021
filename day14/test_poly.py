@@ -1,7 +1,7 @@
-from .poly import parse_input, Polymer, PairInsertion, part1
+from .poly import parse_input, Polymer, PairInsertions, super_sick_algo
 
 
-def fixture() -> tuple[Polymer, list[PairInsertion]]:
+def fixture() -> tuple[Polymer, PairInsertions]:
     text = """NNCB
 
 CH -> B
@@ -25,5 +25,10 @@ CN -> C"""
 
 
 def test_part1():
-    data = fixture()
-    assert part1(data[0], data[1]) == 1588
+    template, pair_insertions = fixture()
+    assert super_sick_algo(template, pair_insertions, 10) == 1588
+
+
+def test_part2():
+    template, pair_insertions = fixture()
+    assert super_sick_algo(template, pair_insertions, 40) == 2188189693529
