@@ -1,4 +1,4 @@
-from day8.segments import parse_data, Entry, part1
+from day8.segments import parse_data, Entry, part1, part2
 
 
 def fixture() -> list[Entry]:
@@ -18,3 +18,7 @@ gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc | fgae cfgab fg bagce
 
 def test_part1():
     assert part1(fixture()) == 26
+
+
+def test_part2():
+    assert part2(fixture()) == 61229
