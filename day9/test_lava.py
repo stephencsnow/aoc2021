@@ -1,4 +1,4 @@
-from day9.lava import parse_data, part1
+from day9.lava import parse_data, part1, part2
 
 
 def fixture() -> list[list[int]]:
@@ -13,3 +13,7 @@ def fixture() -> list[list[int]]:
 
 def test_part1():
     assert part1(fixture()) == 15
+
+
+def test_part2():
+    assert part2(fixture()) == 1134
