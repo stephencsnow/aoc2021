@@ -57,6 +57,7 @@ class QuickUnion:
 
     def _root(self, i: int) -> int:
         while i != self.id[i]:
+            self.id[i] = self.id[self.id[i]]
             i = self.id[i]
         return i
 
