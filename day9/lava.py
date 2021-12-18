@@ -69,7 +69,14 @@ class QuickUnion:
     def union(self, p: int, q: int) -> None:
         i = self._root(p)
         j = self._root(q)
-        self.id[i] = j
+        if self.sz[i] < self.sz[j]:
+            # merge i into j
+            self.id[i] = j
+            self.sz[j] += self.sz[i]
+        else:
+            # merge j into i
+            self.id[j] = i
+            self.sz[i] += self.sz[j]
 
 
 def part2(array: list[list[int]]) -> int:
